@@ -1,0 +1,7 @@
+wiek=12
+wzrost=123
+plec=MEZCZYZNA
+zarobki=0
+waga=45.0
+zarost=tak
+##############################
