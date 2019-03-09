@@ -1,8 +1,6 @@
-package com.javagda23.zad1_zad2;
+package com.javagda23.zad1_zad2.I_mowiacy;
 
-import com.javagda23.zad1_zad2._I_mowiacy.IMowiacy;
-import com.javagda23.zad1_zad2._I_mowiacy.MowiacyMetodyStatycznej;
-import com.javagda23.zad1_zad2._I_mowiacy.ZiewajacyMetody;
+import com.javagda23.zad1_zad2.Czlowiek;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,7 +28,7 @@ public class Main {
 
         //2
         //a
-        IMowiacy jawna2 = new ZiewajacyMetody();
+        IMowiacy jawna2 = new MowiacyMetodyInstancji();
         jawna2.powiedzCos();
 
         //b
@@ -54,7 +52,5 @@ public class Main {
         //e
         IMowiacy methodRef2_2 = new Czlowiek()::ziewnij;
         methodRef2_2.powiedzCos();
-
-
     }
 }

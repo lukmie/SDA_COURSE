@@ -1,4 +1,4 @@
-package com.javagda23.zad1_zad2._I_mowiacy;
+package com.javagda23.zad1_zad2.I_mowiacy;
 
 import com.javagda23.zad1_zad2.Czlowiek;
 
