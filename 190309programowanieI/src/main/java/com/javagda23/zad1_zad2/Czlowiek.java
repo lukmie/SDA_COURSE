@@ -1,6 +1,8 @@
 package com.javagda23.zad1_zad2;
 
-public class Czlowiek {
+import com.javagda23.zad5.IPotrafiacyJesc;
+
+public class Czlowiek implements IPotrafiacyJesc {
     private String imie;
 
     public Czlowiek() {
@@ -11,19 +13,24 @@ public class Czlowiek {
         this.imie = imie;
     }
 
-    public static void  przywitajSie(){
+    public static void przywitajSie() {
         System.out.println("Cześć - metoda statyczna");
     }
 
-    public void ziewnij(){
-        System.out.println("aaaaaaaaa - metoda instancji");
-    }
-
-    public static void zerknijNa(String cos){
+    public static void zerknijNa(String cos) {
         System.out.println("Zerkam na: " + cos + " - metoda statyczna.");
     }
 
-    public void przygladajSie(String czemus){
+    public void ziewnij() {
+        System.out.println("aaaaaaaaa - metoda instancji");
+    }
+
+    public void przygladajSie(String czemus) {
         System.out.println("Przygladam się: " + czemus + "- metoda instancji.");
+    }
+
+    @Override
+    public void jedz(String cos) {
+        System.out.println("Zjadlem " + cos);
     }
 }
