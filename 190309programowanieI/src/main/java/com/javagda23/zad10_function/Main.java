@@ -43,8 +43,9 @@ public class Main {
         System.out.println(tworzenieCzlowieka.apply("Spejson"));
 
         //6
-        Pracownik pracownik = new Pracownik("Adrain", "Ada",
-                new Urlop(LocalDate.now(), LocalDate.of(2019,3,21)));
+        Pracownik pracownik = new Pracownik("Adrain", "Ada");
+        pracownik.setUrlop(new Urlop(LocalDate.of(2018,3,1), LocalDate.of(2018,4,21)));
+
         Function<Pracownik, String> tworzenie1 = pracownik1 ->
                 (pracownik1.getImie().charAt(0) + " " + pracownik1.getNazwisko().charAt(0));
         System.out.println(tworzenie1.apply(pracownik));

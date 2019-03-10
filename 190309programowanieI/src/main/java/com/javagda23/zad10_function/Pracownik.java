@@ -7,6 +7,11 @@ public class Pracownik {
     private String nazwisko;
     private Urlop urlop;
 
+    public Pracownik(String imie, String nazwisko) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+    }
+
     public Pracownik(String imie, String nazwisko, Urlop urlop) {
         this.imie = imie;
         this.nazwisko = nazwisko;
