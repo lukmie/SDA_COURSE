@@ -50,6 +50,7 @@ public class Main {
         //7
 //        Predicate<TestUrlopu> testUrlopu = urloptest -> urloptest.
         TestUrlopu testUrlopu = new TestUrlopu(LocalDate.of(2017,7,20));
+        testUrlopu.setLocalDate(LocalDate.of(2017,7,22));
         System.out.println(testUrlopu.test(urlop1));
 
 

@@ -10,6 +10,7 @@ public class Czlowiek implements IPotrafiacyJesc {
     }
 
     public Czlowiek(String imie) {
+        System.out.println("Tworzę człowieka!");
         this.imie = imie;
     }
 
@@ -32,5 +33,10 @@ public class Czlowiek implements IPotrafiacyJesc {
     @Override
     public void jedz(String cos) {
         System.out.println("Zjadlem " + cos);
+    }
+
+    @Override
+    public String toString() {
+        return "imie=" + imie;
     }
 }
