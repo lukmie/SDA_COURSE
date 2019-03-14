@@ -25,6 +25,22 @@ public class Main {
 
         consument.andThen(dlugosc).accept("sss");
 
+        //6
+        Consumer<String> con6 = liczba -> {
+            try{
+                if (liczba.matches("-?\\d+")){
+                    System.out.println(Integer.parseInt(liczba)*Integer.parseInt(liczba));
+                } else System.out.println("Not an integer");
+//                int i = Integer.parseInt(liczba);
+//                System.out.println(i*i);
+            } catch (NumberFormatException e){
+                System.out.println("Not an integer");
+            }
+        };
+        con6.accept("-222");
+        Consumer<String> komponent = consument.andThen(con6);
+        komponent.accept("5");
+
 
 
     }

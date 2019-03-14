@@ -5,6 +5,7 @@ import com.javagda23.zad9_predicate.Urlop;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.Period;
 import java.util.function.Function;
 
@@ -44,14 +45,23 @@ public class Main {
 
         //6
         Pracownik pracownik = new Pracownik("Adrain", "Ada");
-        pracownik.setUrlop(new Urlop(LocalDate.of(2018,3,1), LocalDate.of(2018,4,21)));
+        pracownik.setUrlop(new Urlop(LocalDate.of(2018, Month.MARCH,1), LocalDate.of(2018,Month.APRIL,21)));
 
         Function<Pracownik, String> tworzenie1 = pracownik1 ->
                 (pracownik1.getImie().charAt(0) + " " + pracownik1.getNazwisko().charAt(0));
         System.out.println(tworzenie1.apply(pracownik));
-        Function<Pracownik, Integer> dlugoscUrlopu = pracownik1 ->
-                Period.between(pracownik1.getUrlop().getDate1(), pracownik1.getUrlop().getDate2()).getDays();
+
+        Function<Pracownik, String> dlugoscUrlopu = pracownik1 ->{
+            final Period period = Period.between(
+                    pracownik1.getUrlop().getDate1(),
+                    pracownik1.getUrlop().getDate2());
+            return period.getMonths() + " miesiac " + period.getDays() + " dni";
+
+        };
         System.out.println(dlugoscUrlopu.apply(pracownik));
+
+
+
 //        Period period = Period.between(pracownik.getUrlop().getDate1(), pracownik.getUrlop().getDate2());
 //        System.out.println(period);
 
