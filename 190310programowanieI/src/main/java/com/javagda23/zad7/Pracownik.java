@@ -44,4 +44,8 @@ public class Pracownik {
     public void setPensja(Integer pensja) {
         this.pensja = pensja;
     }
+
+    public String toString() {
+        return imie + " - [" + plec + "] - " + departament + " - [" + pensja + "]";
+    }
 }

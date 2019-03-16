@@ -77,7 +77,7 @@ public class Main {
 
     public static Boolean metoda9() {
         return POSTY.stream()
-                .noneMatch(post -> post.getTag().trim().split(",").length > 1);
+                .noneMatch(post -> post.getTag().trim().split(",").length > 5);
     }
 
     public static Optional<Post> metoda10() {
