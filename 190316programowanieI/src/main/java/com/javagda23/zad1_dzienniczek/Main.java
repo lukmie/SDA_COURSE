@@ -1,7 +1,5 @@
 package com.javagda23.zad1_dzienniczek;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 public class Main {
     public static void main(String[] args) {
         Uczen uczen = new Uczen("Marek", "Kafu", KlasaSzkolna.A);

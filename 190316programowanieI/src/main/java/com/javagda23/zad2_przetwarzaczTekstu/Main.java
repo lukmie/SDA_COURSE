@@ -7,9 +7,9 @@ public class Main {
 
         PrzetwarzaczTekstu przetwarzaczTekstu = new PrzetwarzaczTekstu(s);
 
-        przetwarzaczTekstu.przetworzMetoda1();
-        przetwarzaczTekstu.przetworzMetoda2();
-        przetwarzaczTekstu.przetworzMetoda3();
+//        przetwarzaczTekstu.przetworzMetoda1();
+//        przetwarzaczTekstu.przetworzMetoda2();
+//        przetwarzaczTekstu.przetworzMetoda3();
         przetwarzaczTekstu.przetworzMetoda4();
     }
 }

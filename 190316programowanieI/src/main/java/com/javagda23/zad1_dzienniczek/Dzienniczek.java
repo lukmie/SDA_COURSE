@@ -1,7 +1,8 @@
 package com.javagda23.zad1_dzienniczek;
 
-import java.time.LocalDate;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Dzienniczek {
 
@@ -46,7 +47,24 @@ public class Dzienniczek {
 
     public Ocena popraw(Przedmiot przedmiot, TypOceny typOceny)throws BrakOcenyException{
         return odczytanieOceny(przedmiot, typOceny).popraw();
+    }
 
+    public Collection<Przedmiot> przedmioty(){
+        return this.oceny.keySet();
+    }
+
+    public Collection<Ocena> odczytajOceny(){
+        return this.oceny.values().stream()
+                .flatMap(Collection::stream)
+//                .flatMap(listaOcen -> listaOcen.stream())
+                .collect(Collectors.toList());
+    }
+
+    public OptionalDouble sredniaOcen(){
+        return odczytajOceny()
+                .stream()
+                .mapToInt(Ocena::getWartoscOceny)
+                .average();
     }
 
     @Override
