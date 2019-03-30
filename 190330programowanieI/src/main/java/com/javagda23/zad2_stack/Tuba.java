@@ -1,8 +1,5 @@
-package com.javagda23.zad2;
+package com.javagda23.zad2_stack;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Queue;
 import java.util.Stack;
 
 public class Tuba<T> {

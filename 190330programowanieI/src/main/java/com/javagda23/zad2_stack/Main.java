@@ -1,4 +1,4 @@
-package com.javagda23.zad2;
+package com.javagda23.zad2_stack;
 
 public class Main {
     public static void main(String[] args) {
