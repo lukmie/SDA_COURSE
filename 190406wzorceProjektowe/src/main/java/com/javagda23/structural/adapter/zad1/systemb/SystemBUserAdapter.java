@@ -1,11 +1,9 @@
-package com.javagda23.adapter.zad1.systemb;
+package com.javagda23.structural.adapter.zad1.systemb;
 
-import com.javagda23.adapter.zad1.User;
+import com.javagda23.structural.adapter.zad1.User;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class SystemBUserAdapter implements User {
 
@@ -34,5 +32,12 @@ public class SystemBUserAdapter implements User {
     public List<String> getRoles() {
 //        return systemBUser.getRoles().stream().collect(Collectors.toList());
         return new ArrayList<>(systemBUser.getRoles());
+    }
+
+    @Override
+    public String toString() {
+        return "SystemBUserAdapter{" +
+                "systemBUser=" + systemBUser +
+                '}';
     }
 }

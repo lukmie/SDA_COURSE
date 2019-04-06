@@ -1,6 +1,6 @@
-package com.javagda23.adapter.zad1.systema;
+package com.javagda23.structural.adapter.zad1.systema;
 
-import com.javagda23.adapter.zad1.User;
+import com.javagda23.structural.adapter.zad1.User;
 
 import java.util.List;
 
@@ -30,5 +30,10 @@ public class SystemAUserAdapter implements User {
     @Override
     public List<String> getRoles() {
         return systemAUser.getRoles();
+    }
+
+    @Override
+    public String toString() {
+        return systemAUser.getFirstName() + " " + systemAUser.getLastName();
     }
 }

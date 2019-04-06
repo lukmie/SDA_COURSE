@@ -1,4 +1,4 @@
-package com.javagda23.adapter.zad1.systema;
+package com.javagda23.structural.adapter.zad1.systema;
 
 import java.util.List;
 

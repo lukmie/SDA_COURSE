@@ -1,4 +1,4 @@
-package com.javagda23.adapter.zad1.systemb;
+package com.javagda23.structural.adapter.zad1.systemb;
 
 import java.util.Set;
 
