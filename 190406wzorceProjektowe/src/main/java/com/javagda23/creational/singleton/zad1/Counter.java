@@ -1,4 +1,4 @@
-package com.javagda23.singleton.zad1;
+package com.javagda23.creational.singleton.zad1;
 
 public class Counter {
     private int counter = 0;

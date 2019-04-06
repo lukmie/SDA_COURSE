@@ -1,6 +1,7 @@
-package com.javagda23.builder;
+package com.javagda23.creational.builder;
 
-import com.javagda23.builder.zad1.Player;
+import com.javagda23.creational.builder.zad1.Player;
+import com.javagda23.creational.builder.zad2.Person;
 
 import java.util.Collections;
 
@@ -13,5 +14,9 @@ public class BuilderDemo {
                 .withNick("Killer")
                 .withFriends(Collections.<String>emptyList())
                 .build();//stworzenie klasy bilder dla klasy typu player
+
+        final Person person = new Person("s", "ss", 3);
+
+//        final Person person2 = new Person.PersonBuilder().age(2).build();
     }
 }

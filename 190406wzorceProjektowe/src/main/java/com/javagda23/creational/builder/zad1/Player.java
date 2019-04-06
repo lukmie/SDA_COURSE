@@ -1,4 +1,4 @@
-package com.javagda23.builder.zad1;
+package com.javagda23.creational.builder.zad1;
 
 import java.util.List;
 

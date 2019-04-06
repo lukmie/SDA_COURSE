@@ -1,4 +1,4 @@
-package com.javagda23.singleton.zad2;
+package com.javagda23.creational.singleton.zad2;
 
 import java.util.ArrayList;
 import java.util.List;

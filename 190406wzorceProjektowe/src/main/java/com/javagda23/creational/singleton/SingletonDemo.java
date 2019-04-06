@@ -1,6 +1,6 @@
-package com.javagda23.singleton;
+package com.javagda23.creational.singleton;
 
-import com.javagda23.singleton.zad2.AppConnections;
+import com.javagda23.creational.singleton.zad2.AppConnections;
 
 public class SingletonDemo {
     public static void main(String[] args) {
