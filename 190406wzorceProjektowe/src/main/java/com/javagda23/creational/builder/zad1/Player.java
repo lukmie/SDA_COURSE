@@ -17,8 +17,6 @@ public class Player {
         this.friends = friends;
     }
 
-
-
     public int getHealth() {
         return health;
     }
@@ -66,32 +64,32 @@ public class Player {
         private long level;
         private List<String> friends;
 
-        public Builder withHealth(int health){
+        public Builder withHealth(int health) {
             this.health = health;
             return this;
         }
 
-        public Builder withMana(int mana){
+        public Builder withMana(int mana) {
             this.mana = mana;
             return this;
         }
 
-        public Builder withNick(String nick){
+        public Builder withNick(String nick) {
             this.nick = nick;
             return this;
         }
 
-        public Builder withLevel(long level){
+        public Builder withLevel(long level) {
             this.level = level;
             return this;
         }
 
-        public Builder withFriends(List<String> friends){
+        public Builder withFriends(List<String> friends) {
             this.friends = friends;
             return this;
         }
 
-        public Player build(){
+        public Player build() {
             return new Player(health, mana, nick, level, friends);
         }
 

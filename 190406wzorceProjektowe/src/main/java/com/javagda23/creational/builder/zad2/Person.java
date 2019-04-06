@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Builder
+@Builder(builderMethodName = "personBuilder", buildMethodName = "create")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
