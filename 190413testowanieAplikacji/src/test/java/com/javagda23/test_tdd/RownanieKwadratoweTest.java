@@ -1,6 +1,6 @@
 package com.javagda23.test_tdd;
 
-import com.javagda23.zad4_rownanieKwadratowe.RownanieKwadratowe;
+import com.javagda23.zad4_tddRownanieKwadratowe.RownanieKwadratowe;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

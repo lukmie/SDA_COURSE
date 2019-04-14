@@ -1,4 +1,4 @@
-package com.javagda23.zad4_rownanieKwadratowe;
+package com.javagda23.zad4_tddRownanieKwadratowe;
 
 public class RownanieKwadratowe {
     public static String oblicz(int a, int b, int c) {
