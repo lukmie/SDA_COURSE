@@ -12,7 +12,8 @@ public class Main {
     public static void main(String[] args) throws IOException, APIError {
         DetectLanguage.apiKey = "bdb6299ef9f486f4d393b0f65b3837bb";
 
-        BufferedReader br = new BufferedReader(new FileReader("chunichi.txt"));
+        BufferedReader br = new BufferedReader(new FileReader("src/main/resources/chunichi.txt"));
+
         String everything;
         try {
             StringBuilder sb = new StringBuilder();
