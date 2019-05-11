@@ -7,14 +7,32 @@
     <groupId>com.lukmie</groupId>
     <artifactId>190511ProgramowanieII</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <scm>
+        <url>git@github.com:detectlanguage/detectlanguage-java.git</url>
+        <connection>scm:git:git@github.com:detectlanguage/detectlanguage-java.git</connection>
+        <developerConnection>scm:git:git@github.com:detectlanguage/detectlanguage-java.git</developerConnection>
+    </scm>
+
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.detectlanguage/detectlanguage -->
+        <dependency>
+            <groupId>com.detectlanguage</groupId>
+            <artifactId>detectlanguage</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>6</source>
-                    <target>6</target>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>
