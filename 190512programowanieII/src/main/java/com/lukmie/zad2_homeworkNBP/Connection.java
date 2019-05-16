@@ -20,7 +20,6 @@ public class Connection {
         sb.append("/" + nationality);
         sb.append("/" + Operations.checkDate(LocalDateTime.now().minusDays(daysAgo)).format(FORMATTER));
         sb.append("/?format=json").toString();
-
         return sb.toString();
     }
 
@@ -37,7 +36,9 @@ public class Connection {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         String line = scanner.nextLine();
+
         Gson gson = new Gson();
 
         return gson.fromJson(line, Currency.class);
