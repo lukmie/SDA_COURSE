@@ -1,16 +1,22 @@
 package com.lukmie.zad1;
 
-
+import static com.lukmie.zad1.Benchmark.*;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        MyList myList = new MyList();
-        myList.add("a");
-        myList.add("b");
-        myList.add("d");
-        myList.add("c");
 
-        System.out.println(myList.search("b"));
-        System.out.println();
+    public static void main(String[] args) {
+
+        benchmarkArrayListAdd();
+        benchmarkLinkedListAdd();
+        benchmarkArrayListAddAtIndex();
+        benchmarkLinkedListAddAtIndex();
+        benchmarkArrayListRemoveObject();
+        benchmarkLinkedListRemoveObject();
+        benchmarkArrayListRemoveAtIndex();
+        benchmarkLinkedListRemoveAtIndex();
+        benchmarkArrayListGetObject();
+        benchmarkLinkedListGetObject();
+
     }
+
 }

@@ -1,23 +1,17 @@
 package com.lukmie.zad1;
 
-public class MyList<T> {
+import java.util.*;
+
+public class MyList<T> implements List {
 
     private Cell<T> head;
 
-    public void  add(T value) {
+    public void  addValue(T value) {
         if (head == null) {
             head = new Cell<T>(value, null);
         } else {
             getLastCell().setNext(new Cell<T>(value, null));
         }
-    }
-
-    private Cell<T> getLastCell() {
-        Cell<T> currentCell = head;
-        while(currentCell.getNext() != null) {
-            currentCell = currentCell.getNext();
-        }
-        return currentCell;
     }
 
     public int getSize() {
@@ -33,19 +27,129 @@ public class MyList<T> {
         } while (current != null);
 
         return size;
+
+    }
+
+    @Override
+    public int size() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return false;
+    }
+
+    @Override
+    public Iterator iterator() {
+        return null;
+    }
+
+    @Override
+    public Object[] toArray() {
+        return new Object[0];
+    }
+
+    @Override
+    public boolean add(Object o) {
+        return false;
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean addAll(int index, Collection c) {
+        return false;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
+    @Override
+    public boolean retainAll(Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean removeAll(Collection c) {
+        return false;
+    }
+
+    @Override
+    public boolean containsAll(Collection c) {
+        return false;
+    }
+
+    @Override
+    public Object[] toArray(Object[] a) {
+        return new Object[0];
     }
 
     public T get(int i) {
-        validateIndexInRange(i, 0, getSize() - 1);
+        validateIndexInRange(i, getSize() - 1);
         return getCell(i).getValue();
     }
 
+    @Override
+    public Object set(int index, Object element) {
+        return null;
+    }
+
+    @Override
+    public void add(int index, Object element) {
+
+    }
+
+    @Override
+    public Object remove(int index) {
+        return null;
+    }
+
+    @Override
+    public int indexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public int lastIndexOf(Object o) {
+        return 0;
+    }
+
+    @Override
+    public ListIterator listIterator() {
+        return null;
+    }
+
+    @Override
+    public ListIterator listIterator(int index) {
+        return null;
+    }
+
+    @Override
+    public List subList(int fromIndex, int toIndex) {
+        return null;
+    }
+
     public void insert(int i, T value) {
-        validateIndexInRange(i, 0, getSize());
+        validateIndexInRange(i, getSize());
 
         if (i == 0) {
-            Cell<T> newCell = new Cell<>(value, head);
-            head = newCell;
+            head = new Cell<T>(value, head);
         } else {
             Cell<T> previous = getCell(i - 1);
             Cell<T> newCell = new Cell<T>(value, previous.getNext());
@@ -54,52 +158,41 @@ public class MyList<T> {
         }
     }
 
-
-    public void remove(int i) {
-        validateIndexInRange(i, 0, getSize() - 1);
-        if (i == 0) {
+    public void removeById(int id) {
+        validateIndexInRange(id, getSize() - 1);
+        if (id == 0) {
             head = head.getNext();
         } else {
-            Cell<T> previous = getCell(i - 1);
+            Cell<T> previous = getCell(id - 1);
             previous.setNext(previous.getNext().getNext());
         }
     }
 
-    public void remove(T value) {
-        Cell<T> currentCell = head;
+    public void removeByValue(T value) {
+        Cell<T> current = head;
         Cell<T> previous = null;
-        while (currentCell != null){
-            if (currentCell.getValue().equals(value)){
-                if (currentCell == head){
+        while (current != null) {
+            if (current.getValue().equals(value)) {
+                if (current == head) {
                     head = head.getNext();
-                    currentCell = currentCell.getNext();
+                    current = current.getNext();
                 } else {
-                    previous.setNext(currentCell.getNext());
-                    currentCell = currentCell.getNext();
+                    previous.setNext(current.getNext());
+                    current = current.getNext();
                 }
             } else {
-                previous = currentCell;
-                currentCell = currentCell.getNext();
+                previous = current;
+                current = current.getNext();
             }
         }
-//        while(currentCell.getNext() == value) {
-//            Cell<T> previous = current;
-//            previous.setNext(previous.getNext().getNext());
-//        }
     }
 
-    public int search(T value) {
+    private Cell<T> getLastCell() {
         Cell<T> currentCell = head;
-        int i = 0;
-        int index = -1;
-        while(currentCell != null) {
-            if (currentCell.getValue().equals(value)){
-                index = i;
-            }
+        while(currentCell.getNext() != null) {
             currentCell = currentCell.getNext();
-            i++;
         }
-        return index;
+        return currentCell;
     }
 
     private Cell<T> getCell(int i) {
@@ -112,20 +205,9 @@ public class MyList<T> {
         return currentCell;
     }
 
-    private void validateIndexInRange(int i, int start, int end) {
-        if (head == null || start < 0 || end < i) {
+    private void validateIndexInRange(int i, int end) {
+        if (head == null || 0 < 0 || end < i) {
             throw new IndexOutOfBoundsException();
         }
     }
-
-//    public int search(T value){
-//        int size = 0;
-//        Cell<T> current = head;
-//        do {
-//            size++;
-//            current = current.getNext();
-//        } while (current != null || current.getValue().equals(value));
-//
-//        return size;
-//    }
 }
