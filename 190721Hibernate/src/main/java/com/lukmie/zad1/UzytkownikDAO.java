@@ -8,10 +8,6 @@ import java.util.List;
 
 public class UzytkownikDAO {
 
-    public void addList(List<Uzytkownik> list) {
-
-    }
-
     public void addUser(Uzytkownik uzytkownik) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
