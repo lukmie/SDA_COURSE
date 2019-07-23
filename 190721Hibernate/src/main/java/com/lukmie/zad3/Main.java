@@ -63,35 +63,40 @@ public class Main {
 
         klient1.setAdres(adres1);
 
+        producent1.add(produkt1);
+        producent1.add(produkt2);
+        producent1.add(produkt3);
+        producent1.add(produkt4);
+
         produkt1.setKategoriaProduktu(kategoriaProduktu1);
-        produkt1.setProducent(producent1);
+//        produkt1.setProducent(producent1);
 
         produkt2.setKategoriaProduktu(kategoriaProduktu1);
-        produkt2.setProducent(producent1);
+//        produkt2.setProducent(producent1);
 
         produkt3.setKategoriaProduktu(kategoriaProduktu1);
-        produkt3.setProducent(producent1);
+//        produkt3.setProducent(producent1);
 
         produkt4.setKategoriaProduktu(kategoriaProduktu1);
-        produkt4.setProducent(producent1);
+//        produkt4.setProducent(producent1);
 
-        produkt5.setKategoriaProduktu(kategoriaProduktu1);
-        produkt5.setProducent(producent1);
-
-        produkt6.setKategoriaProduktu(kategoriaProduktu3);
-        produkt6.setProducent(producent2);
-
-        produkt7.setKategoriaProduktu(kategoriaProduktu3);
-        produkt7.setProducent(producent2);
-
-        produkt8.setKategoriaProduktu(kategoriaProduktu3);
-        produkt8.setProducent(producent2);
-
-        produkt9.setKategoriaProduktu(kategoriaProduktu2);
-        produkt9.setProducent(producent2);
-
-        produkt10.setKategoriaProduktu(kategoriaProduktu2);
-        produkt10.setProducent(producent2);
+//        produkt5.setKategoriaProduktu(kategoriaProduktu1);
+//        produkt5.setProducent(producent1);
+//
+//        produkt6.setKategoriaProduktu(kategoriaProduktu3);
+//        produkt6.setProducent(producent2);
+//
+//        produkt7.setKategoriaProduktu(kategoriaProduktu3);
+//        produkt7.setProducent(producent2);
+//
+//        produkt8.setKategoriaProduktu(kategoriaProduktu3);
+//        produkt8.setProducent(producent2);
+//
+//        produkt9.setKategoriaProduktu(kategoriaProduktu2);
+//        produkt9.setProducent(producent2);
+//
+//        produkt10.setKategoriaProduktu(kategoriaProduktu2);
+//        produkt10.setProducent(producent2);
 
         klient1.getProduktList().add(produkt1);
         klient1.getProduktList().add(produkt2);
@@ -116,7 +121,7 @@ public class Main {
         klientDAO.update(klient1);
         klientDAO.update(klient2);
 
-        System.out.println(producentDAO.select(1));
+        System.out.println(klientDAO.select(1).getProduktList());
 
 //        Session session = HibernateUtil.getSessionFactory().openSession();
 //        session.beginTransaction();

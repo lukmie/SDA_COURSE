@@ -1,6 +1,7 @@
 package com.lukmie.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -42,6 +43,14 @@ public class KategoriaProduktu {
 
     public List<Produkt> getProduktList() {
         return produktList;
+    }
+
+    public void add(Produkt tempProdukt) {
+        if (produktList == null) {
+            produktList = new ArrayList<>();
+        }
+        produktList.add(tempProdukt);
+        tempProdukt.setKategoriaProduktu(this);
     }
 
     public void setProduktList(List<Produkt> produktList) {

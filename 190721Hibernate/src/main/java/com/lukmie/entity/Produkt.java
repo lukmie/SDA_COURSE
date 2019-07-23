@@ -87,10 +87,10 @@ public class Produkt {
     public String toString() {
         return "Produkt{" +
                 "id_produktu=" + id_produktu +
-                ", nazwa='" + nazwa + '\'' +
-                ", cena='" + cena + '\'' +
-                ", producent=" + producent +
-                ", kategoriaProduktu=" + kategoriaProduktu +
+                ", nazwa='" + nazwa +
+                ", cena='" + cena +
+//                ", producent=" + producent +
+//                ", kategoriaProduktu=" + kategoriaProduktu +
                 '}';
     }
 }

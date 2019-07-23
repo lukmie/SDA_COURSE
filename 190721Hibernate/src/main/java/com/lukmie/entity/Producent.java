@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
 @Table(schema = "sklep", name = "producent")
 public class Producent {
@@ -46,6 +47,14 @@ public class Producent {
             produkt = new ArrayList<>();
         }
         return produkt;
+    }
+
+    public void add(Produkt tempProdukt) {
+        if (produkt == null) {
+            produkt = new ArrayList<>();
+        }
+        produkt.add(tempProdukt);
+        tempProdukt.setProducent(this);
     }
 
     public void setProdukt(List<Produkt> produkt) {
