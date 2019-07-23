@@ -1,6 +1,7 @@
 package com.lukmie.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -18,13 +19,13 @@ public class Klient {
     @Column
     private String telefon;
 
-    @ManyToMany
-    @JoinTable(name="Klient_Produkt",
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(name="zakupy",
             joinColumns=@JoinColumn(name="klient_id"),
             inverseJoinColumns=@JoinColumn(name="produkt_id"))
     private List<Produkt> produktList;
 
-    @OneToOne(mappedBy = "id_adres")
+    @OneToOne(mappedBy = "klient", cascade = CascadeType.ALL)
     private Adres adres;
 
     public Klient() {
@@ -69,6 +70,9 @@ public class Klient {
     }
 
     public List<Produkt> getProduktList() {
+        if (produktList == null) {
+            produktList = new ArrayList<>();
+        }
         return produktList;
     }
 

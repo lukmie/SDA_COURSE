@@ -14,23 +14,23 @@ public class Produkt {
     @Column
     private String nazwa;
     @Column
-    private String cena;
+    private Double cena;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "producent_id")
     private Producent producent;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "kategoria_id")
     private KategoriaProduktu kategoriaProduktu;
 
-    @ManyToMany(mappedBy = "klient_id")
+    @ManyToMany(mappedBy = "produktList")
     private List<Klient> klientList;
 
     public Produkt() {
     }
 
-    public Produkt(String nazwa, String cena) {
+    public Produkt(String nazwa, Double cena) {
         this.nazwa = nazwa;
         this.cena = cena;
     }
@@ -51,11 +51,11 @@ public class Produkt {
         this.nazwa = nazwa;
     }
 
-    public String getCena() {
+    public Double getCena() {
         return cena;
     }
 
-    public void setCena(String cena) {
+    public void setCena(Double cena) {
         this.cena = cena;
     }
 
@@ -73,6 +73,14 @@ public class Produkt {
 
     public void setKategoriaProduktu(KategoriaProduktu kategoriaProduktu) {
         this.kategoriaProduktu = kategoriaProduktu;
+    }
+
+    public List<Klient> getKlientList() {
+        return klientList;
+    }
+
+    public void setKlientList(List<Klient> klientList) {
+        this.klientList = klientList;
     }
 
     @Override

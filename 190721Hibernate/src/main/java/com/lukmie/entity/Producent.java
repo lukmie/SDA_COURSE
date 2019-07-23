@@ -1,6 +1,7 @@
 package com.lukmie.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,7 +14,8 @@ public class Producent {
     private Integer id_producenta;
     @Column
     private String nazwa;
-    @OneToMany(mappedBy = "producent")
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "producent")
     private List<Produkt> produkt;
 
     public Producent() {
@@ -40,6 +42,9 @@ public class Producent {
     }
 
     public List<Produkt> getProdukt() {
+        if (produkt == null) {
+            produkt = new ArrayList<>();
+        }
         return produkt;
     }
 

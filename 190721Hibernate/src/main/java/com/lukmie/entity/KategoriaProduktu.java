@@ -50,7 +50,7 @@ public class KategoriaProduktu {
 
     @Override
     public String toString() {
-        return "KategoriaProduktu{" +
+        return "KategoriaProduktuDAO{" +
                 "id_kategorii=" + id_kategorii +
                 ", nazwa='" + nazwa + '\'' +
                 ", produktList=" + produktList +

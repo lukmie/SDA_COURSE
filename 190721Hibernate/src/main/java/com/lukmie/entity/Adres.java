@@ -21,7 +21,7 @@ public class Adres {
     @Column
     private String miescowosc;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "klient_id", unique = true)
     private Klient klient;
 

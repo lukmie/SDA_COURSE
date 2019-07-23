@@ -11,8 +11,8 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
-        <mapping class="com.lukmie.entity.Uzytkownik"></mapping>
-        <mapping class="com.lukmie.entity.Film"></mapping>
+        <!--<mapping class="com.lukmie.entity.Uzytkownik"></mapping>-->
+        <!--<mapping class="com.lukmie.entity.Film"></mapping>-->
 
         <mapping class="com.lukmie.entity.Adres"></mapping>
         <mapping class="com.lukmie.entity.KategoriaProduktu"></mapping>
