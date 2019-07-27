@@ -1,6 +1,11 @@
 package com.lukmie.zad1;
 
+import com.lukmie.HibernateUtil;
+import com.lukmie.entity.Klient;
 import com.lukmie.entity.Pracownik;
+import org.hibernate.Session;
+
+import java.util.List;
 
 public class PracownikDAO extends DAO<Pracownik> {
 
@@ -23,5 +28,12 @@ public class PracownikDAO extends DAO<Pracownik> {
     public void delete(Integer id) {
         pracownik.setId(id);
         super.delete(id, pracownik);
+    }
+
+    public List<Pracownik> findByNazwisko(String nazwisko) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        List<Pracownik> klientList = session.createNamedQuery("pracownik.findByNazwisko", Pracownik.class).setParameter("nazwisko", nazwisko).getResultList();
+        session.close();
+        return klientList;
     }
 }

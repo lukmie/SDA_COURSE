@@ -21,6 +21,12 @@ public class Firma {
     public Firma() {
     }
 
+    public Firma(String nazwaFirmy, String imie, String nazwisko) {
+        this.nazwaFirmy = nazwaFirmy;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -51,5 +57,15 @@ public class Firma {
 
     public void setNazwisko(String nazwisko) {
         this.nazwisko = nazwisko;
+    }
+
+    @Override
+    public String toString() {
+        return "Firma{" +
+                "id=" + id +
+                ", nazwaFirmy='" + nazwaFirmy + '\'' +
+                ", imie='" + imie + '\'' +
+                ", nazwisko='" + nazwisko + '\'' +
+                '}';
     }
 }

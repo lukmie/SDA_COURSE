@@ -2,30 +2,29 @@ package com.lukmie.zad1;
 
 import com.lukmie.entity.Klient;
 import com.lukmie.entity.Pracownik;
-import org.hibernate.Session;
-import com.lukmie.HibernateUtil;
 
 public class Main {
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
+        KlientDAO klientDAO = new KlientDAO();
+        PracownikDAO pracownikDAO = new PracownikDAO();
 
-        Klient klient1 = new Klient();
-        klient1.setImie("Jan");
-        klient1.setNazwisko("Kowalski");
-        klient1.setNazwaFirmy("PKO");
-        klient1.setTelefonKont("123");
-        session.persist(klient1);
+        Klient klient2 = new Klient("PKO", "Robert", "Nowak", "321");
+        Klient klient3 = new Klient("PKO", "Andrzej", "Nowak", "234");
+        Klient klient4 = new Klient("PKO", "Michal", "Nowak", "668");
 
-        Pracownik pracownik1 = new Pracownik();
-        pracownik1.setImie("Adam");
-        pracownik1.setNazwisko("Acc");
-        pracownik1.setStanowisko("ksiegowy");
-        pracownik1.setWynagrodzenie(3000.0);
-        pracownik1.setNazwaFirmy("PKO");
-        session.persist(pracownik1);
+        Pracownik pracownik2 = new Pracownik("PKO", "Adam", "Malysz", "kasjer", 2000.0);
+        Pracownik pracownik3 = new Pracownik("PKO", "Krystian", "Mateja", "kasjer", 2000.0);
+        Pracownik pracownik4 = new Pracownik("PKO", "Pawel", "Malysz", "kasjer", 2000.0);
 
-        session.flush();
-        session.close();
+        klientDAO.add(klient2);
+        klientDAO.add(klient3);
+        klientDAO.add(klient4);
+
+        pracownikDAO.add(pracownik2);
+        pracownikDAO.add(pracownik3);
+        pracownikDAO.add(pracownik4);
+
+        System.out.println(klientDAO.findByNazwisko("Nowak"));
+
     }
 }
