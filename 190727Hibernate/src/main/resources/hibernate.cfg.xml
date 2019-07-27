@@ -4,8 +4,8 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dziedziczenie?serverTimezone=UTC</property>-->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/embedded?serverTimezone=UTC</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/dziedziczenie?serverTimezone=UTC</property>
+        <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/embedded?serverTimezone=UTC</property>-->
         <property name="hibernate.connection.username">sdatest</property>
         <property name="hibernate.connection.password">Start123!</property>
         <property name="hibernate.show_sql">true</property>
@@ -15,6 +15,8 @@
         <!--<mapping class="com.lukmie.entity.Firma"/>-->
         <!--<mapping class="com.lukmie.entity.Klient"/>-->
         <!--<mapping class="com.lukmie.entity.Pracownik"/>-->
-        <mapping class="com.lukmie.entity.PacjentUpo"/>
+        <mapping class="com.lukmie.entity.Klient2"/>
+        <mapping class="com.lukmie.entity.Pracownik2"/>
+        <!--<mapping class="com.lukmie.entity.PacjentUpo"/>-->
     </session-factory>
 </hibernate-configuration>

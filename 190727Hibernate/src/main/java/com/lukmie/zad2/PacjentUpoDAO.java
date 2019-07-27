@@ -58,7 +58,9 @@ public class PacjentUpoDAO extends DAO<PacjentUpo> {
         session.beginTransaction();
         boolean flag = false;
         PacjentUpo pacjentUpo = session.createNamedQuery("pacjentUpo.findByPesel", PacjentUpo.class).setParameter("pesel", nrPeselPacjenta).getSingleResult();
-        if (pacjentUpo.getUpowaznionyI() != null && pacjentUpo.getUpowaznionyI().equals(upowazniony)) {
+
+        //tu odwrotnie sprobowac
+        if (upowazniony.equals(pacjentUpo.getUpowaznionyI())) {
             flag = true;
         } else if (pacjentUpo.getUpowaznionyII() != null && pacjentUpo.getUpowaznionyII().equals(upowazniony)) {
             flag = true;
