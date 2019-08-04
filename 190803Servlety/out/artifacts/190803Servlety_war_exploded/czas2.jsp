@@ -11,6 +11,5 @@
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("E yyyy.MM.dd 'at' hh.mm.ss a zzz");
         out.print("<h2>" + simpleDateFormat.format(dbNow) + "</h2>");
     %>
-
 </body>
 </html>

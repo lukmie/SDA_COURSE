@@ -14,7 +14,6 @@ public class InfoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         if (request.getSession(true).getAttribute("mail") == null) {
-            System.out.println(request.getContextPath());
             response.sendRedirect(request.getContextPath() + "/Start");
         }
 
