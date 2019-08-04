@@ -32,6 +32,9 @@ public class ServletExe1 extends HttpServlet {
             String name = cookies[i].getName();
             String value = cookies[i].getValue();
             printWriter.println(name + ": " + value);
+            if (name.equals("Sylwia") && value.equals("W")) {
+                printWriter.println("Sylwia is a cookie.");
+            }
         }
         printWriter.close();
     }
