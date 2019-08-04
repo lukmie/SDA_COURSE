@@ -6,8 +6,9 @@
 <body>
 
     <jsp:useBean id="text" class="action.TestBean" />
-    <%--<jsp:setProperty name="text" property="message" value="Hello" />--%>
+    <jsp:setProperty name="text" property="message" value="Hello" />
     <jsp:getProperty name="text" property="message" />
+    <jsp: name="text" property="message" />
 
 </body>
 </html>
