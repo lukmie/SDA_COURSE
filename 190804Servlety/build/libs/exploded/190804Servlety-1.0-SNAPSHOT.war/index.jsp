@@ -62,10 +62,10 @@
   <p>Dlugosc listy</p>
   ${fn:length(lista)}
 
-  <fmt:formatNumber value="${cena}" type="currency" currencyCode="PLN" minFractionDigits="2" maxFractionDigits="2">
+  <fmt:formatNumber value="${cena}" type="currency" currencyCode="PLN" minFractionDigits="2" maxFractionDigits="2"/>
 
-  </fmt:formatNumber>
-  <%--<br/>--%>
+  <br/>
+
   <fmt:formatDate value="${data}" timeStyle="long" dateStyle="long" type="both" />
 
 </body>
