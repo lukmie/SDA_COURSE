@@ -54,7 +54,7 @@ public class UserServlet extends HttpServlet {
     private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         userDAO.deleteUser(id);
-        response.sendRedirect("user-list.jsp");
+        response.sendRedirect("list");
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -68,7 +68,7 @@ public class UserServlet extends HttpServlet {
 
         User newUser = new User(name, email, country);
         userDAO.insertUser(newUser);
-        response.sendRedirect("user-list.jsp");
+        response.sendRedirect("list");
 
     }
 
@@ -81,9 +81,7 @@ public class UserServlet extends HttpServlet {
 
     private void listUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> usersList = userDAO.selectUsers();
-
         request.setAttribute("listUser", usersList);
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("user-list.jsp");
         dispatcher.forward(request, response);
     }
@@ -95,8 +93,8 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
 
         User updateUser = new User(id, name, email, country);
-        userDAO.insertUser(updateUser);
-        response.sendRedirect("user-list.jsp");
+        userDAO.updateUser(updateUser);
+        response.sendRedirect("list");
     }
 
 
