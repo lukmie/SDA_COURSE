@@ -4,11 +4,15 @@ import com.lukmie.car.model.CarDI;
 import com.lukmie.car.model.CarNoDI;
 import com.lukmie.car.model.Engine;
 import com.lukmie.car.model.Wheels;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+@ComponentScan
 public class Main {
 
     public static void main(String[] args) {
+//        XML
 
 //        CarNoDI tesla = new CarNoDI();
 //        tesla.drive();
@@ -24,7 +28,7 @@ public class Main {
 //        teslaDISeter.setWheels(wheels);
 //        teslaDISeter.drive();
 
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
+//        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
 //
 //        Engine engine1 = applicationContext.getBean(Engine.class);
 //        Engine engine2 = applicationContext.getBean(Engine.class);
@@ -44,9 +48,17 @@ public class Main {
 //        Wheels wheels = applicationContext.getBean(Wheels.class);
 //        wheels.printSize();
 
+//        CarDI car = applicationContext.getBean(CarDI.class);
+//        car.drive();
+
+//        ANNOTATION
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(Main.class);
+
+//        Engine engine = applicationContext.getBean(Engine.class);
+//        engine.printPower();
+
         CarDI car = applicationContext.getBean(CarDI.class);
         car.drive();
-
 
     }
 }
