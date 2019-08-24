@@ -13,4 +13,8 @@ public class Engine {
     public void printPower() {
         System.out.println("Engine power: " + this.power);
     }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
 }
