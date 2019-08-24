@@ -23,7 +23,7 @@ public class CarDI {
     public void drive() {
         wheels.printSize();
         engine.printPower();
-        System.out.println("CarNoDI drives");
+        System.out.println("CarDI drives");
     }
 
 
