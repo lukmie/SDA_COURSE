@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<p th:if="${msg} != null" th:text="${msg}"></p>
+<p th:if="${msg} == null" th:text="'Result ' + ${result}"></p>
+
+<button onclick="window.location.href='/calculator'">Back</button>
+</body>
+</html>
