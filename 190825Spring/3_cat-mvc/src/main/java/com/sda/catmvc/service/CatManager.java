@@ -6,6 +6,9 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import java.util.List;
 
 @Service
 public class CatManager implements InitializingBean {
@@ -16,6 +19,15 @@ public class CatManager implements InitializingBean {
         em.persist(cat);
         em.getTransaction().commit();
     }
+
+    public List<Cat> getCats() {
+        EntityManager em = HibernateUtil.getEntityManager();
+        CriteriaBuilder builder = HibernateUtil.getCriteriaBuilder();
+        CriteriaQuery<Cat> criteria = builder.createQuery(Cat.class);
+        criteria.from(Cat.class);
+        return em.createQuery(criteria).getResultList();
+    }
+
 
     @Override
     public void afterPropertiesSet() throws Exception {
