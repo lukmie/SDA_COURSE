@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="kitchenservice" class="com.sda.catmanager.service.helper.KitchenService">
+
+    </bean>
+    <bean id="catfeeder" class="com.sda.catmanager.service.helper.CatFeeder">
+        <constructor-arg ref="kitchenservice"/>
+    </bean>
+    <bean id="catwasher" class="com.sda.catmanager.service.helper.CatWasher">
+
+    </bean>
+    <bean id="catmanager" class="com.sda.catmanager.service.CatManager">
+        <constructor-arg index="0" ref="catwasher"/>
+        <constructor-arg index="1" ref="catfeeder"/>
+    </bean>
+    <bean id="cat" class="com.sda.catmanager.model.Cat" scope="prototype">
+
+        <constructor-arg index="0" value="Rys"/>
+        <constructor-arg index="1" value="11"/>
+    </bean>
+
+</beans>

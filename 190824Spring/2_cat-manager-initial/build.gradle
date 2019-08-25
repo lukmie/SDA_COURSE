@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.sda'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-context', version: '5.1.7.RELEASE'
+    testCompile group: 'org.springframework', name: 'spring-test', version: '5.1.7.RELEASE'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.4.2'
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.12.2'
+}
