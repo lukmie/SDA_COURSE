@@ -28,11 +28,44 @@ public class CatManager implements InitializingBean {
         return em.createQuery(criteria).getResultList();
     }
 
+    public void deleteCat(Long id) {
+        EntityManager em = HibernateUtil.getEntityManager();
+        em.getTransaction().begin();
+        Cat existingCat = em.find(Cat.class, id);
+        if (existingCat != null) {
+            em.remove(em.contains(existingCat) ? existingCat : em.merge(existingCat));
+        }
+        em.getTransaction().commit();
+    }
+
+    public Cat getCat(Long id) {
+        EntityManager em = HibernateUtil.getEntityManager();
+        em.getTransaction().begin();
+        Cat existingCat = em.find(Cat.class, id);
+        em.getTransaction().commit();
+        return existingCat;
+    }
+
+    public void updateCat(Long id, Cat cat) {
+        cat.setId(id);
+        EntityManager em = HibernateUtil.getEntityManager();
+        em.getTransaction().begin();
+        em.merge(cat);
+        em.getTransaction().commit();
+    }
+
+//    public void updateCat(Cat cat) {
+//        EntityManager em = HibernateUtil.getEntityManager();
+//        em.getTransaction().begin();
+//        em.merge(cat);
+//        em.getTransaction().commit();
+//    }
 
     @Override
     public void afterPropertiesSet() throws Exception {
         Cat cat = new Cat("Rys", "Kryptopies", 11);
         saveCat(cat);
-
     }
+
+
 }
