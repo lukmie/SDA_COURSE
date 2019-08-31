@@ -13,4 +13,9 @@ public class AppExceptionHandler {
         return new ResponseEntity(HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(OwnerNotFoundException.class)
+    public ResponseEntity handleOwnerNotFoundException() {
+        return new ResponseEntity(HttpStatus.NOT_FOUND);
+    }
+
 }

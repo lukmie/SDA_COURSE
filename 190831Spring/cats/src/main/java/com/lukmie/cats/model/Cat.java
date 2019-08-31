@@ -26,6 +26,13 @@ public class Cat {
         this.gender = gender;
     }
 
+    public Cat(String name, Integer tailLength, Gender gender, List<Toy> toys) {
+        this.name = name;
+        this.tailLength = tailLength;
+        this.gender = gender;
+        this.toys = toys;
+    }
+
     public Long getId() {
         return id;
     }
