@@ -1,6 +1,7 @@
 package com.lukmie.cats.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "cats")
 public class Cat {
@@ -12,6 +13,9 @@ public class Cat {
     private Integer tailLength;
     @Enumerated(EnumType.STRING)
     private Gender gender;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "cat_id")
+    private List<Toy> toys;
 
     public Cat() {
     }
@@ -52,5 +56,13 @@ public class Cat {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+    public List<Toy> getToys() {
+        return toys;
+    }
+
+    public void setToys(List<Toy> toys) {
+        this.toys = toys;
     }
 }
